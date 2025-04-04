@@ -28,7 +28,8 @@ export default function RootLayout({
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
-                <div>
+                <div className="flex flex-col">
+                    <Link href="/">home</Link>
                     <Link href="/dashboard">dashboard</Link>
                     <Link href="/expenses">expenses</Link>
                     <Link href="/demo">demo</Link>
