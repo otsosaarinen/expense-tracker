@@ -18,8 +18,10 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${roboto.className} antialiased`}>
-                {children}
+            <body
+                className={`flex h-screen flex-col ${roboto.className} antialiased`}
+            >
+                <div className="grow bg-red-300">{children}</div>
             </body>
         </html>
     );
