@@ -14,7 +14,7 @@ export default function Home() {
     const [password, setPassword] = useState("");
 
     const handleSubmit = () => {
-        console.log({ firstName, lastName, email, password });
+        create_user({ firstName, lastName, email, password });
     };
     return (
         <>
