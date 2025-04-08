@@ -1,7 +1,7 @@
 "use client";
 
 import Expense from "./components/expense";
-import { postgres } from "./actions";
+import { postgres } from "./pg_actions/actions";
 import { useEffect, useState } from "react";
 
 export default function Expenses() {
