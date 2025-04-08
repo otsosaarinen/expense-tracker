@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 type ExpenseFormat = {
     ID: number;
-    expense_type: string;
+    type: string;
     value: number;
     date: string | Date;
 };
@@ -33,7 +33,7 @@ export default function Expenses() {
                 return (
                     <Expense
                         key={index}
-                        type={singleExpense.expense_type}
+                        type={singleExpense.type}
                         value={singleExpense.value}
                         date={
                             new Date(singleExpense.date)
