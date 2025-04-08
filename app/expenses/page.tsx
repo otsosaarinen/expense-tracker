@@ -1,7 +1,7 @@
 "use client";
 
 import Expense from "./components/expense";
-import { postgres } from "./pg_actions/SELECT";
+import { find_expenses } from "./pg_actions/SELECT";
 import { useEffect, useState } from "react";
 
 type ExpenseFormat = {
@@ -16,7 +16,7 @@ export default function Expenses() {
 
     const fetchExpenses = async () => {
         try {
-            const data = await postgres();
+            const data = await find_expenses();
             setExpenses(data);
         } catch (error) {
             console.log("Error while fetching expenses: ", error);
