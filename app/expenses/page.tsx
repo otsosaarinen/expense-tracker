@@ -1,7 +1,7 @@
 "use client";
 
 import Expense from "./components/expense";
-import { find_expenses } from "./pg_actions/SELECT";
+import { find_expenses } from "./pg_actions/select_expenses";
 import { useEffect, useState } from "react";
 
 type ExpenseFormat = {
