@@ -21,7 +21,7 @@ export default function RootLayout({
             <body
                 className={`flex h-screen flex-col ${roboto.className} antialiased`}
             >
-                <div className="grow bg-red-300">{children}</div>
+                <div className="grow">{children}</div>
             </body>
         </html>
     );
