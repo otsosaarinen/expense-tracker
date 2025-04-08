@@ -1,7 +1,7 @@
 "use client";
 
 import Expense from "./components/expense";
-import { postgres } from "./pg_actions/actions";
+import { postgres } from "./pg_actions/SELECT";
 import { useEffect, useState } from "react";
 
 type ExpenseFormat = {
