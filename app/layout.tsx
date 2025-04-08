@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Lexend } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 
-const lexend = Lexend({
+const roboto = Roboto({
     subsets: ["latin"],
 });
 
@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${lexend.className} antialiased`}>
+            <body className={`${roboto.className} antialiased`}>
                 {children}
             </body>
         </html>
