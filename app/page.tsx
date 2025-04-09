@@ -6,12 +6,14 @@ import Link from "next/link";
 export default function Home() {
     return (
         <>
-            <div className="flex flex-col items-center justify-center gap-10">
-                <div className="flex flex-col items-center justify-center text-center text-neutral-800">
-                    <h1 className="text-5xl">Welcome to Expense Tracker!</h1>
-                    <h2 className="text-2xl">
+            <div className="flex flex-col items-center justify-center gap-10 text-neutral-800">
+                <div className="flex flex-col items-center justify-center text-center">
+                    <h1 className="text-6xl font-bold">
+                        Welcome to Expense Tracker
+                    </h1>
+                    <h2 className="text-xl">
                         Here you can track your daily expenses and optimize your
-                        spending
+                        spending!
                     </h2>
                 </div>
                 <div className="flex flex-row gap-2">

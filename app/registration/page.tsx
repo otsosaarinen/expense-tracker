@@ -26,8 +26,8 @@ export default function Registration() {
 
     return (
         <>
-            <div className="flex flex-col gap-2">
-                <div className="mb-10 text-6xl text-neutral-800">
+            <div className="flex flex-col gap-2 text-neutral-800">
+                <div className="mb-10 flex items-center justify-center text-6xl font-bold">
                     Registration
                 </div>
                 <div className="flex flex-col items-center justify-center gap-2">
