@@ -3,7 +3,7 @@
 import pg from "pg";
 import "dotenv/config";
 
-export async function select_expenses() {
+export async function find_expenses() {
     const USER = process.env.PG_USER as string;
     const PASSWORD = process.env.PG_PASSWORD as string;
     const HOST = process.env.PG_HOST as string;
