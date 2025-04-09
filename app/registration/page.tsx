@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { create_user } from "@/db_actions/create_user";
 import { useState } from "react";
 import Button from "@mui/material/Button";
@@ -26,7 +27,7 @@ export default function Registration() {
 
     return (
         <>
-            <div className="flex flex-col gap-2 text-neutral-800">
+            <div className="flex flex-col gap-2 rounded-xl bg-white p-15 text-neutral-800">
                 <div className="mb-10 flex items-center justify-center text-6xl font-bold">
                     Registration
                 </div>
@@ -79,14 +80,21 @@ export default function Registration() {
                         variant="contained"
                         onClick={submitForm}
                         sx={{
-                            color: "success.light",
-                            backgroundColor: "white",
-                            borderColor: "success.light",
+                            color: "oklch(26.9% 0 0)",
+                            backgroundColor: "oklch(95.4% 0.038 75.164)",
+                            borderColor: "oklch(26.9% 0 0)",
                         }}
                         disabled={!validateForm()}
                     >
                         Register
                     </Button>
+                </div>
+                <div className="mt-10 flex flex-col items-center justify-center text-xl">
+                    Have an account already?
+                    <br />
+                    <Link className="underline" href={"/login"}>
+                        Click here to login
+                    </Link>
                 </div>
             </div>
         </>

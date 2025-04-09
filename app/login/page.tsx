@@ -15,7 +15,7 @@ export default function Login() {
     };
     return (
         <>
-            <div className="flex flex-col gap-2 text-neutral-800">
+            <div className="flex flex-col gap-2 rounded-xl bg-white p-15 text-neutral-800">
                 <div className="mb-10 flex items-center justify-center text-6xl font-bold">
                     Login
                 </div>
@@ -40,17 +40,18 @@ export default function Login() {
                         variant="contained"
                         size="large"
                         sx={{
-                            color: "white",
-                            backgroundColor: "success.light",
-                            borderColor: "success.light",
+                            color: "oklch(26.9% 0 0)",
+                            backgroundColor: "oklch(95.4% 0.038 75.164)",
+                            borderColor: "oklch(26.9% 0 0)",
                         }}
                         disabled={!validateForm()}
                     >
                         Login
                     </Button>
                 </div>
-                <div className="mt-10 text-xl">
-                    Don't have an account yet?{" "}
+                <div className="mt-10 flex flex-col items-center justify-center text-xl">
+                    Don't have an account yet?
+                    <br />
                     <Link className="underline" href={"/registration"}>
                         Click here to register
                     </Link>
