@@ -4,7 +4,6 @@ import { create_user } from "@/db_actions/create_user";
 import { useState } from "react";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import Link from "next/link";
 
 export default function Registration() {
     // create variables for saving input values
