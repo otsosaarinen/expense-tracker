@@ -7,7 +7,7 @@ export default function Home() {
     return (
         <>
             <div className="flex flex-col items-center justify-center gap-10 text-neutral-800">
-                <div className="flex flex-col items-center justify-center text-center">
+                <div className="gap- flex flex-col items-center justify-center text-center">
                     <h1 className="text-6xl font-bold">
                         Welcome to Expense Tracker
                     </h1>
@@ -22,9 +22,10 @@ export default function Home() {
                             variant="contained"
                             size="large"
                             sx={{
-                                color: "success.light",
+                                color: "oklch(26.9% 0 0)",
                                 backgroundColor: "white",
-                                borderColor: "success.light",
+                                borderColor: "oklch(26.9% 0 0)",
+                                width: "100px",
                             }}
                         >
                             Login
@@ -35,9 +36,10 @@ export default function Home() {
                             variant="contained"
                             size="large"
                             sx={{
-                                color: "white",
-                                backgroundColor: "success.light",
-                                borderColor: "success.light",
+                                color: "oklch(26.9% 0 0)",
+                                backgroundColor: "white",
+                                borderColor: "oklch(26.9% 0 0)",
+                                width: "100px",
                             }}
                         >
                             Register
