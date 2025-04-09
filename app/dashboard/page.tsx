@@ -3,9 +3,9 @@ import Chart from "./components/chart";
 export default function Dashboard() {
     return (
         <>
-            <div className="flex w-full flex-col items-center">
-                <div>Dashboard</div>
-                <div className="w-6xl">
+            <div className="flex w-full flex-col items-center gap-5">
+                <div className="font-medium">Dashboard</div>
+                <div className="w-7xl">
                     <Chart />
                 </div>
             </div>
