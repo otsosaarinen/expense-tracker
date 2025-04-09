@@ -1,7 +1,7 @@
 "use client";
 
 import Expense from "./components/expense";
-import { find_expenses } from "./pg_actions/select_expenses";
+import { select_expenses } from "./pg_actions/select_expenses";
 import { useEffect, useState } from "react";
 
 type ExpenseFormat = {
@@ -16,7 +16,7 @@ export default function Expenses() {
 
     const fetchExpenses = async () => {
         try {
-            const data = await find_expenses();
+            const data = await select_expenses();
             setExpenses(data);
         } catch (error) {
             console.log("Error while fetching expenses: ", error);
@@ -29,16 +29,14 @@ export default function Expenses() {
 
     return (
         <>
-            {expenses.map((singleExpense, index) => {
+            {expenses.map((expense) => {
                 return (
                     <Expense
-                        key={index}
-                        type={singleExpense.type}
-                        value={singleExpense.value}
+                        key={expense.ID}
+                        type={expense.type}
+                        value={expense.value}
                         date={
-                            new Date(singleExpense.date)
-                                .toISOString()
-                                .split("T")[0]
+                            new Date(expense.date).toISOString().split("T")[0]
                         }
                     />
                 );
