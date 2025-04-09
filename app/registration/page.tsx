@@ -28,8 +28,8 @@ export default function Registration() {
     return (
         <>
             <div className="flex flex-col gap-2">
-                <div className="text-lg italic">
-                    Please fill all the fields to create an user!
+                <div className="mb-10 text-6xl text-neutral-800">
+                    Registration
                 </div>
                 <div className="flex flex-col items-center justify-center gap-2">
                     <TextField
