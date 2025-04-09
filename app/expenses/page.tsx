@@ -1,7 +1,7 @@
 "use client";
 
 import Expense from "./components/expense";
-import { select_expenses } from "../../db_actions/select_expenses";
+import { find_expenses } from "../../db_actions/find_expenses";
 import { useEffect, useState } from "react";
 
 type ExpenseFormat = {
@@ -16,7 +16,7 @@ export default function Expenses() {
 
     const fetchExpenses = async () => {
         try {
-            const data = await select_expenses();
+            const data = await find_expenses();
             setExpenses(data);
         } catch (error) {
             console.log("Error while fetching expenses: ", error);
@@ -29,18 +29,24 @@ export default function Expenses() {
 
     return (
         <>
-            {expenses.map((expense) => {
-                return (
-                    <Expense
-                        key={expense.ID}
-                        type={expense.type}
-                        value={expense.value}
-                        date={
-                            new Date(expense.date).toISOString().split("T")[0]
-                        }
-                    />
-                );
-            })}
+            <div className="flex flex-col">
+                {expenses.map((expense) => {
+                    return (
+                        <div className="my-1">
+                            <Expense
+                                key={expense.ID}
+                                type={expense.type}
+                                value={expense.value}
+                                date={
+                                    new Date(expense.date)
+                                        .toISOString()
+                                        .split("T")[0]
+                                }
+                            />
+                        </div>
+                    );
+                })}
+            </div>
         </>
     );
 }
