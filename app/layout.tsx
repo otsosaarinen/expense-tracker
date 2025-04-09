@@ -24,12 +24,14 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`flex h-screen flex-col ${roboto.className} antialiased`}
+                className={`flex h-screen w-screen flex-col items-center justify-center ${roboto.className} antialiased`}
             >
-                <div className="flex justify-center">
-                    Welcome to expense tracker
+                <div className="flex w-full items-center justify-center bg-green-500 p-3 text-3xl text-white">
+                    Expense Tracker
                 </div>
-                <div className="grow">{children}</div>
+                <div className="flex h-full w-full grow items-center justify-center">
+                    {children}
+                </div>
             </body>
         </html>
     );
