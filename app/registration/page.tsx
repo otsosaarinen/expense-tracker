@@ -92,7 +92,7 @@ export default function Registration() {
                 <div className="mt-10 flex flex-col items-center justify-center text-xl">
                     Have an account already?
                     <br />
-                    <Link className="underline" href={"/login"}>
+                    <Link className="font-bold underline" href={"/login"}>
                         Click here to login
                     </Link>
                 </div>
