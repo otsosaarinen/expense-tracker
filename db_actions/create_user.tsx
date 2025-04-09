@@ -3,6 +3,7 @@
 import pg from "pg";
 import "dotenv/config";
 import bcrypt from "bcryptjs";
+import { redirect } from "next/navigation";
 
 interface accountData {
     firstName: string;
@@ -49,4 +50,6 @@ export async function create_user({
     console.log(res.rows[0]);
 
     await client.end();
+
+    redirect("/dashboard");
 }
