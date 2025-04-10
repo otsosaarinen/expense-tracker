@@ -30,11 +30,10 @@ export default function Expenses() {
     return (
         <>
             <div className="flex flex-col">
-                {expenses.map((expense) => {
+                {expenses.map((expense, index) => {
                     return (
-                        <div className="my-1">
+                        <div className="my-1" key={expense.ID}>
                             <Expense
-                                key={expense.ID}
                                 type={expense.type}
                                 value={expense.value}
                                 date={
