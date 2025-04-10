@@ -17,7 +17,7 @@ export default function Login() {
     };
     return (
         <>
-            <div className="flex flex-col items-center justify-center gap-3">
+            <div className="flex flex-col items-center justify-center gap-5">
                 <div className="flex flex-col gap-5 rounded-xl border-3 border-neutral-800 bg-white/50 p-15 text-neutral-800 backdrop-blur-xs">
                     <div className="flex items-center justify-center text-6xl font-bold">
                         Login

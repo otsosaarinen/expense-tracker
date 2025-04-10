@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Home() {
     return (
         <>
-            <div className="flex flex-col items-center justify-center gap-10 text-neutral-800">
+            <div className="flex flex-col items-center justify-center gap-5 text-neutral-800">
                 <div className="gap- flex flex-col items-center justify-center gap-3 text-center">
                     <h1 className="text-6xl font-bold">
                         Welcome to Expense Tracker
