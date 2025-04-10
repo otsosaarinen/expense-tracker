@@ -18,30 +18,12 @@ export default function Home() {
                 </div>
                 <div className="flex flex-row gap-3">
                     <Link href="/login">
-                        <Button
-                            variant="contained"
-                            size="large"
-                            sx={{
-                                color: "oklch(26.9% 0 0)",
-                                backgroundColor: "white",
-                                borderColor: "oklch(26.9% 0 0)",
-                                width: "100px",
-                            }}
-                        >
+                        <Button variant="contained" size="large">
                             Login
                         </Button>
                     </Link>
                     <Link href="/registration">
-                        <Button
-                            variant="contained"
-                            size="large"
-                            sx={{
-                                color: "oklch(26.9% 0 0)",
-                                backgroundColor: "white",
-                                borderColor: "oklch(26.9% 0 0)",
-                                width: "100px",
-                            }}
-                        >
+                        <Button variant="contained" size="large">
                             Register
                         </Button>
                     </Link>
