@@ -15,7 +15,7 @@ export default function Login() {
     };
     return (
         <>
-            <div className="flex flex-col gap-2 rounded-xl bg-white p-15 text-neutral-800">
+            <div className="flex flex-col gap-2 rounded-xl border-3 border-neutral-800 bg-white p-15 text-neutral-800">
                 <div className="mb-10 flex items-center justify-center text-6xl font-bold">
                     Login
                 </div>
@@ -41,7 +41,7 @@ export default function Login() {
                         size="large"
                         sx={{
                             color: "oklch(26.9% 0 0)",
-                            backgroundColor: "oklch(95.4% 0.038 75.164)",
+                            backgroundColor: "oklch(83.7% 0.128 66.29)",
                             borderColor: "oklch(26.9% 0 0)",
                         }}
                         disabled={!validateForm()}
