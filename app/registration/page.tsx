@@ -27,8 +27,8 @@ export default function Registration() {
 
     return (
         <>
-            <div className="flex flex-col gap-2 rounded-xl border-3 border-neutral-800 bg-white p-15 text-neutral-800">
-                <div className="mb-10 flex items-center justify-center text-6xl font-bold">
+            <div className="flex flex-col gap-5 rounded-xl border-3 border-neutral-800 bg-white p-15 text-neutral-800">
+                <div className="flex items-center justify-center text-6xl font-bold">
                     Registration
                 </div>
                 <div className="flex flex-col items-center justify-center gap-2">
@@ -74,8 +74,6 @@ export default function Registration() {
                         }}
                         required
                     />
-                </div>
-                <div className="flex items-center justify-center">
                     <Button
                         variant="contained"
                         onClick={submitForm}
@@ -89,7 +87,8 @@ export default function Registration() {
                         Register
                     </Button>
                 </div>
-                <div className="mt-10 flex flex-col items-center justify-center text-xl">
+
+                <div className="flex flex-col items-center justify-center text-xl">
                     Have an account already?
                     <br />
                     <Link className="font-bold underline" href={"/login"}>

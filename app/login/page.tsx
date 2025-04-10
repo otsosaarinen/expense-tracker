@@ -15,8 +15,8 @@ export default function Login() {
     };
     return (
         <>
-            <div className="flex flex-col gap-2 rounded-xl border-3 border-neutral-800 bg-white p-15 text-neutral-800">
-                <div className="mb-10 flex items-center justify-center text-6xl font-bold">
+            <div className="flex flex-col gap-5 rounded-xl border-3 border-neutral-800 bg-white p-15 text-neutral-800">
+                <div className="flex items-center justify-center text-6xl font-bold">
                     Login
                 </div>
                 <div className="flex flex-col items-center justify-center gap-2">
@@ -34,8 +34,6 @@ export default function Login() {
                         }}
                         required
                     ></TextField>
-                </div>
-                <div className="flex items-center justify-center">
                     <Button
                         variant="contained"
                         size="large"
@@ -49,7 +47,8 @@ export default function Login() {
                         Login
                     </Button>
                 </div>
-                <div className="mt-10 flex flex-col items-center justify-center text-xl">
+
+                <div className="flex flex-col items-center justify-center text-xl">
                     Don't have an account yet?
                     <br />
                     <Link
