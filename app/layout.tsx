@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Roboto } from "next/font/google";
+import { Button } from "@mui/material";
 import "./globals.css";
 
 import "@fontsource/roboto/300.css";
@@ -28,6 +30,34 @@ export default function RootLayout({
             >
                 <div className="flex w-full items-center justify-center bg-neutral-800 p-3 text-3xl font-medium text-white">
                     Expense Tracker
+                </div>
+                <div className="mt-3 flex gap-3">
+                    <Link href="/">
+                        <Button
+                            variant="contained"
+                            size="large"
+                            sx={{
+                                color: "oklch(26.9% 0 0)",
+                                backgroundColor: "white",
+                                borderColor: "oklch(26.9% 0 0)",
+                            }}
+                        >
+                            Home
+                        </Button>
+                    </Link>
+                    <Link href="/dashboard">
+                        <Button
+                            variant="contained"
+                            size="large"
+                            sx={{
+                                color: "oklch(26.9% 0 0)",
+                                backgroundColor: "white",
+                                borderColor: "oklch(26.9% 0 0)",
+                            }}
+                        >
+                            Dashboard
+                        </Button>
+                    </Link>
                 </div>
                 <div className="flex h-full w-full grow items-center justify-center">
                     {children}
