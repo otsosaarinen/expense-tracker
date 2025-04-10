@@ -37,8 +37,8 @@ export default function Expenses() {
                         Dashboard
                     </Button>
                 </Link>
-                <div className="flex flex-col">
-                    {expenses.map((expense, index) => {
+                <div className="flex h-150 flex-col overflow-auto p-5">
+                    {expenses.map((expense) => {
                         return (
                             <div className="my-1" key={expense.ID}>
                                 <Expense

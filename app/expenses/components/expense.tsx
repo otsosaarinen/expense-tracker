@@ -14,7 +14,7 @@ export default function Expense({ type, value, date }: ExpenseProps) {
     return (
         <>
             <div
-                className={`flex h-18 w-xs flex-row items-center justify-around rounded-full bg-neutral-200`}
+                className={`flex h-14 w-2xs flex-row items-center justify-around rounded-md bg-white/75 backdrop-blur-xs`}
             >
                 <div className={`${expenseStyling} text-3xl`}>
                     {expenseValue}
