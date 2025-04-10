@@ -30,7 +30,7 @@ export default function Registration() {
     return (
         <>
             <div className="flex flex-col items-center justify-center gap-3">
-                <div className="flex flex-col gap-5 rounded-xl border-3 border-neutral-800 bg-white p-15 text-neutral-800">
+                <div className="flex flex-col gap-5 rounded-xl border-3 border-neutral-800 bg-white/50 p-15 text-neutral-800 backdrop-blur-xs">
                     <div className="flex items-center justify-center text-6xl font-bold">
                         Registration
                     </div>
