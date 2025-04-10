@@ -18,20 +18,12 @@ export default function Home() {
                 </div>
                 <div className="flex flex-row gap-3">
                     <Link href="/login">
-                        <Button
-                            variant="contained"
-                            size="large"
-                            color="success"
-                        >
+                        <Button variant="contained" color="success">
                             Login
                         </Button>
                     </Link>
                     <Link href="/registration">
-                        <Button
-                            variant="contained"
-                            size="large"
-                            color="success"
-                        >
+                        <Button variant="contained" color="success">
                             Register
                         </Button>
                     </Link>

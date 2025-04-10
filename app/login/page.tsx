@@ -36,7 +36,6 @@ export default function Login() {
                     ></TextField>
                     <Button
                         variant="contained"
-                        size="large"
                         disabled={!validateForm()}
                         color="success"
                     >

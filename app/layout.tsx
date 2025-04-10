@@ -27,29 +27,17 @@ export default function RootLayout({
                 <AppRouterCacheProvider>
                     <div className="mt-3 flex gap-3">
                         <Link href="/">
-                            <Button
-                                variant="contained"
-                                size="large"
-                                color="success"
-                            >
+                            <Button variant="contained" color="success">
                                 Home
                             </Button>
                         </Link>
                         <Link href="/dashboard">
-                            <Button
-                                variant="contained"
-                                size="large"
-                                color="success"
-                            >
+                            <Button variant="contained" color="success">
                                 Dashboard
                             </Button>
                         </Link>
                         <Link href="/expenses">
-                            <Button
-                                variant="contained"
-                                size="large"
-                                color="success"
-                            >
+                            <Button variant="contained" color="success">
                                 Expenses
                             </Button>
                         </Link>
