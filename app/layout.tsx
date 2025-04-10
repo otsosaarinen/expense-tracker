@@ -1,8 +1,6 @@
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Roboto } from "next/font/google";
-import { Button } from "@mui/material";
 import "./globals.css";
 
 const roboto = Roboto({
@@ -22,7 +20,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`flex h-screen w-screen flex-col items-center justify-center ${roboto.className} bg-linear-to-b from-emerald-400 to-green-300 antialiased`}
+                className={`flex h-screen w-screen flex-col items-center justify-center ${roboto.className} bg-[url(../public/lines.jpg)] antialiased`}
             >
                 <AppRouterCacheProvider>
                     <div className="flex h-full w-full grow items-center justify-center">
