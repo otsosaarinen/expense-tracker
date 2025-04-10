@@ -4,14 +4,21 @@ import Link from "next/link";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import { useState } from "react";
-
 import LoginIcon from "@mui/icons-material/Login";
+import { check_login } from "@/db_actions/check_login";
 
 export default function Login() {
     // create variables for saving input values
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    const checkLogin = () => {
+        if (validateForm()) {
+            check_login({ email, password });
+        }
+    };
+
+    // check if user has filled all the fields
     const validateForm = () => {
         return email && password;
     };
@@ -24,14 +31,21 @@ export default function Login() {
                     </div>
                     <div className="flex flex-col items-center justify-center gap-2">
                         <TextField
+                            id="outlined-email-input"
                             label="Email"
+                            variant="outlined"
+                            value={email}
                             onChange={(e) => {
                                 setEmail(e.target.value);
                             }}
                             required
                         ></TextField>
                         <TextField
+                            id="outlined-password-input"
                             label="Password"
+                            type="password"
+                            variant="outlined"
+                            value={password}
                             onChange={(e) => {
                                 setPassword(e.target.value);
                             }}
@@ -39,6 +53,7 @@ export default function Login() {
                         ></TextField>
                         <Button
                             variant="contained"
+                            onClick={checkLogin}
                             disabled={!validateForm()}
                             color="success"
                             endIcon={<LoginIcon />}
