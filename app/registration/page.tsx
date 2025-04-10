@@ -77,12 +77,8 @@ export default function Registration() {
                     <Button
                         variant="contained"
                         onClick={submitForm}
-                        sx={{
-                            color: "oklch(26.9% 0 0)",
-                            backgroundColor: "oklch(83.7% 0.128 66.29)",
-                            borderColor: "oklch(26.9% 0 0)",
-                        }}
                         disabled={!validateForm()}
+                        color="success"
                     >
                         Register
                     </Button>

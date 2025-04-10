@@ -37,12 +37,8 @@ export default function Login() {
                     <Button
                         variant="contained"
                         size="large"
-                        sx={{
-                            color: "oklch(26.9% 0 0)",
-                            backgroundColor: "oklch(83.7% 0.128 66.29)",
-                            borderColor: "oklch(26.9% 0 0)",
-                        }}
                         disabled={!validateForm()}
+                        color="success"
                     >
                         Login
                     </Button>
