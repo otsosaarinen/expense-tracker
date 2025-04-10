@@ -29,69 +29,78 @@ export default function Registration() {
 
     return (
         <>
-            <div className="flex flex-col gap-5 rounded-xl border-3 border-neutral-800 bg-white p-15 text-neutral-800">
-                <div className="flex items-center justify-center text-6xl font-bold">
-                    Registration
-                </div>
-                <div className="flex flex-col items-center justify-center gap-2">
-                    <TextField
-                        id="outlined-first-name-input"
-                        label="First Name"
-                        variant="outlined"
-                        value={firstName}
-                        onChange={(e) => {
-                            setFirstName(e.target.value);
-                        }}
-                        required
-                    />
-                    <TextField
-                        id="outlined-last-name-input"
-                        label="Last Name"
-                        variant="outlined"
-                        value={lastName}
-                        onChange={(e) => {
-                            setLastName(e.target.value);
-                        }}
-                        required
-                    />
+            <div className="flex flex-col items-center justify-center gap-3">
+                <div className="flex flex-col gap-5 rounded-xl border-3 border-neutral-800 bg-white p-15 text-neutral-800">
+                    <div className="flex items-center justify-center text-6xl font-bold">
+                        Registration
+                    </div>
+                    <div className="flex flex-col items-center justify-center gap-2">
+                        <TextField
+                            id="outlined-first-name-input"
+                            label="First Name"
+                            variant="outlined"
+                            value={firstName}
+                            onChange={(e) => {
+                                setFirstName(e.target.value);
+                            }}
+                            required
+                        />
+                        <TextField
+                            id="outlined-last-name-input"
+                            label="Last Name"
+                            variant="outlined"
+                            value={lastName}
+                            onChange={(e) => {
+                                setLastName(e.target.value);
+                            }}
+                            required
+                        />
 
-                    <TextField
-                        id="outlined-email-input"
-                        label="Email"
-                        variant="outlined"
-                        value={email}
-                        onChange={(e) => {
-                            setEmail(e.target.value);
-                        }}
-                        required
-                    />
-                    <TextField
-                        id="outlined-password-input"
-                        label="Password"
-                        type="password"
-                        variant="outlined"
-                        value={password}
-                        onChange={(e) => {
-                            setPassword(e.target.value);
-                        }}
-                        required
-                    />
-                    <Button
-                        variant="contained"
-                        onClick={submitForm}
-                        disabled={!validateForm()}
-                        color="success"
-                        endIcon={<HowToReg />}
-                    >
-                        Register
-                    </Button>
-                </div>
+                        <TextField
+                            id="outlined-email-input"
+                            label="Email"
+                            variant="outlined"
+                            value={email}
+                            onChange={(e) => {
+                                setEmail(e.target.value);
+                            }}
+                            required
+                        />
+                        <TextField
+                            id="outlined-password-input"
+                            label="Password"
+                            type="password"
+                            variant="outlined"
+                            value={password}
+                            onChange={(e) => {
+                                setPassword(e.target.value);
+                            }}
+                            required
+                        />
+                        <Button
+                            variant="contained"
+                            onClick={submitForm}
+                            disabled={!validateForm()}
+                            color="success"
+                            endIcon={<HowToReg />}
+                        >
+                            Register
+                        </Button>
+                    </div>
 
-                <div className="flex flex-col items-center justify-center text-xl">
-                    Have an account already?
-                    <br />
-                    <Link className="font-bold underline" href={"/login"}>
-                        Click here to login
+                    <div className="flex flex-col items-center justify-center text-xl">
+                        Have an account already?
+                        <br />
+                        <Link className="font-bold underline" href={"/login"}>
+                            Click here to login
+                        </Link>
+                    </div>
+                </div>
+                <div>
+                    <Link href="/">
+                        <Button variant="contained" color="success">
+                            back home
+                        </Button>
                     </Link>
                 </div>
             </div>

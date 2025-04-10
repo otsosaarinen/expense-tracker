@@ -3,7 +3,9 @@
 import Link from "next/link";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import { use, useState } from "react";
+import { useState } from "react";
+
+import LoginIcon from "@mui/icons-material/Login";
 
 export default function Login() {
     // create variables for saving input values
@@ -15,42 +17,52 @@ export default function Login() {
     };
     return (
         <>
-            <div className="flex flex-col gap-5 rounded-xl border-3 border-neutral-800 bg-white p-15 text-neutral-800">
-                <div className="flex items-center justify-center text-6xl font-bold">
-                    Login
-                </div>
-                <div className="flex flex-col items-center justify-center gap-2">
-                    <TextField
-                        label="Email"
-                        onChange={(e) => {
-                            setEmail(e.target.value);
-                        }}
-                        required
-                    ></TextField>
-                    <TextField
-                        label="Password"
-                        onChange={(e) => {
-                            setPassword(e.target.value);
-                        }}
-                        required
-                    ></TextField>
-                    <Button
-                        variant="contained"
-                        disabled={!validateForm()}
-                        color="success"
-                    >
+            <div className="flex flex-col items-center justify-center gap-3">
+                <div className="flex flex-col gap-5 rounded-xl border-3 border-neutral-800 bg-white p-15 text-neutral-800">
+                    <div className="flex items-center justify-center text-6xl font-bold">
                         Login
-                    </Button>
-                </div>
+                    </div>
+                    <div className="flex flex-col items-center justify-center gap-2">
+                        <TextField
+                            label="Email"
+                            onChange={(e) => {
+                                setEmail(e.target.value);
+                            }}
+                            required
+                        ></TextField>
+                        <TextField
+                            label="Password"
+                            onChange={(e) => {
+                                setPassword(e.target.value);
+                            }}
+                            required
+                        ></TextField>
+                        <Button
+                            variant="contained"
+                            disabled={!validateForm()}
+                            color="success"
+                            endIcon={<LoginIcon />}
+                        >
+                            Login
+                        </Button>
+                    </div>
 
-                <div className="flex flex-col items-center justify-center text-xl">
-                    Don't have an account yet?
-                    <br />
-                    <Link
-                        className="font-bold underline"
-                        href={"/registration"}
-                    >
-                        Click here to register
+                    <div className="flex flex-col items-center justify-center text-xl">
+                        Don't have an account yet?
+                        <br />
+                        <Link
+                            className="font-bold underline"
+                            href={"/registration"}
+                        >
+                            Click here to register
+                        </Link>
+                    </div>
+                </div>
+                <div>
+                    <Link href="/">
+                        <Button variant="contained" color="success">
+                            back home
+                        </Button>
                     </Link>
                 </div>
             </div>
