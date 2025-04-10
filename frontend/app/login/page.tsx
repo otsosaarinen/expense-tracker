@@ -5,7 +5,6 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import { useState } from "react";
 import LoginIcon from "@mui/icons-material/Login";
-import { check_login } from "@/db_actions/check_login";
 
 export default function Login() {
     // create variables for saving input values
