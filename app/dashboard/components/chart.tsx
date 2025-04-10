@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { CartesianGrid, Line, LineChart, XAxis } from "recharts";
+import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
 
 import {
     Card,
@@ -140,9 +140,9 @@ export default function Chart() {
         <Card>
             <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row">
                 <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
-                    <CardTitle>Line Chart - Interactive</CardTitle>
+                    <CardTitle>Income - Expenses</CardTitle>
                     <CardDescription>
-                        Showing total visitors for the last 3 months
+                        Showing total income & expenses for the last 3 months
                     </CardDescription>
                 </div>
                 <div className="flex">
@@ -152,7 +152,7 @@ export default function Chart() {
                             <button
                                 key={chart}
                                 data-active={activeChart === chart}
-                                className="data-[active=true]:bg-muted/50 flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l sm:border-t-0 sm:border-l sm:px-8 sm:py-6"
+                                className="data-[active=true]:bg-muted/50 relative z-30 flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l sm:border-t-0 sm:border-l sm:px-8 sm:py-6"
                                 onClick={() => setActiveChart(chart)}
                             >
                                 <span className="text-muted-foreground text-xs">
@@ -173,7 +173,7 @@ export default function Chart() {
                     config={chartConfig}
                     className="aspect-auto h-[250px] w-full"
                 >
-                    <LineChart
+                    <BarChart
                         accessibilityLayer
                         data={chartData}
                         margin={{
@@ -213,14 +213,11 @@ export default function Chart() {
                                 />
                             }
                         />
-                        <Line
+                        <Bar
                             dataKey={activeChart}
-                            type="monotone"
-                            stroke={`var(--color-${activeChart})`}
-                            strokeWidth={2}
-                            dot={false}
+                            fill={`var(--color-${activeChart})`}
                         />
-                    </LineChart>
+                    </BarChart>
                 </ChartContainer>
             </CardContent>
         </Card>
