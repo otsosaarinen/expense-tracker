@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { create_user } from "@/db_actions/create_user";
 import { useState } from "react";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";

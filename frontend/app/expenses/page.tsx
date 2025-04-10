@@ -1,7 +1,6 @@
 "use client";
 
 import Expense from "./components/expense";
-import { find_expenses } from "../../db_actions/find_expenses";
 import { useEffect, useState } from "react";
 import { Button } from "@mui/material";
 import Link from "next/link";
