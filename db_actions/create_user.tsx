@@ -30,6 +30,7 @@ export async function create_user({
 
     const { Client } = pg;
 
+    // set database variables to succesfully connect to postgres
     const client = new Client({
         user: USER,
         password: PASSWORD,
@@ -51,5 +52,6 @@ export async function create_user({
 
     await client.end();
 
+    // redirect user to dashboard after creating the user
     redirect("/dashboard");
 }
