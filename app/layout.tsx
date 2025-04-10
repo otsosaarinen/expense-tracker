@@ -25,23 +25,6 @@ export default function RootLayout({
                 className={`flex h-screen w-screen flex-col items-center justify-center ${roboto.className} antialiased`}
             >
                 <AppRouterCacheProvider>
-                    <div className="mt-3 flex gap-3">
-                        <Link href="/">
-                            <Button variant="contained" color="success">
-                                Home
-                            </Button>
-                        </Link>
-                        <Link href="/dashboard">
-                            <Button variant="contained" color="success">
-                                Dashboard
-                            </Button>
-                        </Link>
-                        <Link href="/expenses">
-                            <Button variant="contained" color="success">
-                                Expenses
-                            </Button>
-                        </Link>
-                    </div>
                     <div className="flex h-full w-full grow items-center justify-center">
                         {children}
                     </div>
