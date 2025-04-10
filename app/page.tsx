@@ -16,7 +16,7 @@ export default function Home() {
                         spending!
                     </h2>
                 </div>
-                <div className="flex flex-row gap-2">
+                <div className="flex flex-row gap-3">
                     <Link href="/login">
                         <Button
                             variant="contained"
