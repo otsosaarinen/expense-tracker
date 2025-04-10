@@ -22,7 +22,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`flex h-screen w-screen flex-col items-center justify-center ${roboto.className} antialiased`}
+                className={`flex h-screen w-screen flex-col items-center justify-center ${roboto.className} bg-linear-to-b from-emerald-400 to-green-300 antialiased`}
             >
                 <AppRouterCacheProvider>
                     <div className="flex h-full w-full grow items-center justify-center">
