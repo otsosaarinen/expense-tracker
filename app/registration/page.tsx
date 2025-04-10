@@ -6,6 +6,8 @@ import { useState } from "react";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 
+import HowToReg from "@mui/icons-material/HowToReg";
+
 export default function Registration() {
     // create variables for saving input values
     const [firstName, setFirstName] = useState("");
@@ -79,6 +81,7 @@ export default function Registration() {
                         onClick={submitForm}
                         disabled={!validateForm()}
                         color="success"
+                        endIcon={<HowToReg />}
                     >
                         Register
                     </Button>
