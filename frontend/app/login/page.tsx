@@ -1,19 +1,42 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import { useState } from "react";
 import LoginIcon from "@mui/icons-material/Login";
 
 export default function Login() {
+    const router = useRouter();
+
     // create variables for saving input values
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState(false);
 
-    const checkLogin = () => {
+    const checkLogin = async () => {
         if (validateForm()) {
-            check_login({ email, password });
+            const body = {
+                email_address: email,
+                password: password,
+            };
+            try {
+                const response = await fetch("http://localhost:4000/userAuth", {
+                    method: "POST",
+                    headers: { "Content-type": "application/json" },
+                    body: JSON.stringify(body),
+                });
+
+                if (!response.ok) {
+                    setError(true);
+                } else {
+                    router.push("/dashboard");
+                }
+            } catch (error) {
+                setError(true);
+                console.log("Error occured while creating an account: ", error);
+            }
         }
     };
 
@@ -59,6 +82,13 @@ export default function Login() {
                         >
                             Login
                         </Button>
+                        {error ? (
+                            <div className="font-medium text-red-500">
+                                Incorrect email or password
+                            </div>
+                        ) : (
+                            ""
+                        )}
                     </div>
 
                     <div className="flex flex-col items-center justify-center text-xl">
