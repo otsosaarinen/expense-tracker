@@ -37,12 +37,12 @@ router.post("/", async (req: Request, res: Response) => {
         await client.connect();
 
         const query = {
-            text: "INSERT INTO users(first_name, last_name, email_address, hash) VALUES($1, $2, $3, $4) RETURNING *",
+            text: "INSERT INTO users (first_name, last_name, email_address, hash) VALUES($1, $2, $3, $4) RETURNING *",
             values: [first_name, last_name, email_address, hash],
         };
 
         const query_res = await client.query(query);
-        console.log(query_res.rows[0]);
+        console.log(query_res.rows);
 
         // disconnect from the database
         await client.end();
