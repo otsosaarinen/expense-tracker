@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
@@ -8,16 +9,40 @@ import TextField from "@mui/material/TextField";
 import HowToReg from "@mui/icons-material/HowToReg";
 
 export default function Registration() {
+    const router = useRouter();
+
     // create variables for saving input values
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState(false);
 
     // checks if all fields are filled and sends user information to database
-    const submitForm = () => {
+    const submitForm = async () => {
         if (validateForm()) {
-            create_user({ firstName, lastName, email, password });
+            const body = {
+                first_name: firstName,
+                last_name: lastName,
+                email_address: email,
+                password: password,
+            };
+            try {
+                const response = await fetch("http://localhost:4000/userAdd", {
+                    method: "POST",
+                    headers: { "Content-type": "application/json" },
+                    body: JSON.stringify(body),
+                });
+
+                if (!response.ok) {
+                    setError(true);
+                } else {
+                    router.push("/dashboard");
+                }
+            } catch (error) {
+                setError(true);
+                console.log("Error occured while creating an account: ", error);
+            }
         }
     };
 
@@ -85,6 +110,13 @@ export default function Registration() {
                         >
                             Register
                         </Button>
+                        {error ? (
+                            <div className="font-medium text-red-500">
+                                Error occured while creating an account
+                            </div>
+                        ) : (
+                            ""
+                        )}
                     </div>
 
                     <div className="flex flex-col items-center justify-center text-xl">
