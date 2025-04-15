@@ -11,7 +11,7 @@ export default function Dashboard() {
                         Expenses
                     </Button>
                 </Link>
-                <div className="w-7xl">
+                <div className="w-[80%]">
                     <Chart />
                 </div>
             </div>
