@@ -40,7 +40,10 @@ router.post("/", async (req: Request, res: Response) => {
         await client.end();
 
         // send succesfull response to frontend
-        res.status(200).json({ message: "Expenses fetched" });
+        res.status(200).json({
+            message: "Expenses fetched",
+            expenses: query_res.rows,
+        });
     } catch (error) {
         console.log("Error occured while fetching expenses: ", error);
         // send error response in case something goes wrong
