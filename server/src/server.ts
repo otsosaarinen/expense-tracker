@@ -3,6 +3,7 @@ import cors from "cors";
 
 import userAdd from "./routes/userAdd";
 import userAuth from "./routes/userAuth";
+import expensesFetch from "./routes/expensesFetch";
 
 const app = express();
 const cors_middleware = cors();
@@ -13,6 +14,7 @@ app.use(express.json());
 
 app.use("/userAdd", userAdd);
 app.use("/userAuth", userAuth);
+app.use("/expensesFetch", expensesFetch);
 
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
