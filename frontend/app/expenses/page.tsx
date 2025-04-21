@@ -1,6 +1,7 @@
 "use client";
 
 import Expense from "./components/expense";
+import AddExpense from "./components/addExpense";
 import { useEffect, useState } from "react";
 import { Button } from "@mui/material";
 import Link from "next/link";
@@ -14,7 +15,11 @@ type ExpenseFormat = {
 };
 
 export default function Expenses() {
+    type DisplayType = "hidden" | "flex";
+
     const [expenses, setExpenses] = useState<ExpenseFormat[]>([]);
+    const [buttonVisibility, setButtonVisibility] =
+        useState<DisplayType>("hidden");
 
     const fetchExpenses = async () => {
         const body = {
@@ -42,6 +47,10 @@ export default function Expenses() {
         fetchExpenses();
     }, []);
 
+    const toggleAddExpenseButton = () => {
+        setButtonVisibility("flex");
+    };
+
     return (
         <>
             <div className="flex flex-col items-center justify-center gap-5">
@@ -67,6 +76,14 @@ export default function Expenses() {
                         );
                     })}
                 </div>
+                <Button
+                    variant="contained"
+                    color="success"
+                    onClick={toggleAddExpenseButton}
+                >
+                    Click here to add expenses
+                </Button>
+                <AddExpense visibility={buttonVisibility} />
             </div>
         </>
     );
