@@ -10,15 +10,29 @@ type ExpenseFormat = {
     type: string;
     value: number;
     date: string | Date;
+    user: number;
 };
 
 export default function Expenses() {
     const [expenses, setExpenses] = useState<ExpenseFormat[]>([]);
 
     const fetchExpenses = async () => {
+        const body = {
+            user_id: "43",
+        };
+
         try {
-            const data = await find_expenses();
-            setExpenses(data);
+            const response = await fetch(
+                "http://localhost:4000/expensesFetch",
+                {
+                    method: "POST",
+                    headers: { "Content-type": "application/json" },
+                    body: JSON.stringify(body),
+                },
+            );
+
+            const data = await response.json();
+            setExpenses(data.expenses);
         } catch (error) {
             console.log("Error while fetching expenses: ", error);
         }
