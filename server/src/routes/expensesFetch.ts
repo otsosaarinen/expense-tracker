@@ -34,7 +34,6 @@ router.post("/", async (req: Request, res: Response) => {
         };
 
         const query_res = await client.query(query);
-        console.log(query_res.rows);
 
         // disconnect from the database
         await client.end();
